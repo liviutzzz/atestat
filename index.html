@@ -5,25 +5,28 @@
     <title>Pagina de Home</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Resetare stiluri implicite */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Stilizare corpul paginii */
+        /* corpul paginii */
         body {
             font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            color: #333;
         }
 
         /* Meniul de navigare */
         .navbar {
-            display: flex;
-            justify-content: space-between;
-            background-color: #333;
-            padding: 10px 20px;
-        }
+			display: flex;
+			justify-content: space-between;
+			background: linear-gradient(to right, #00C5A3, #009C91); 
+			padding: 15px 30px;
+		}
+
 
         /* Logo */
         .logo {
@@ -37,7 +40,7 @@
         .menu {
             list-style-type: none;
             display: flex;
-            gap: 20px;
+            gap: 30px;
         }
 
         .menu li {
@@ -50,30 +53,53 @@
             text-decoration: none;
             padding: 10px;
             display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
         .menu li a:hover {
-            background-color: #575757;
+            background-color: #00C5A3;
         }
 
-        /* Submeniurile */
+        /* Submeniuri */
         .submenu {
             display: none;
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: #444;
+            background-color: #FDB813; 
             min-width: 200px;
             border-radius: 5px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .submenu li a {
             padding: 10px;
+            color: #333;
+            transition: background-color 0.3s;
+        }
+
+        .submenu li a:hover {
+            background-color: #FF6F00; 
         }
 
         /* Afisare submeniuri la hover */
         .menu li:hover .submenu {
             display: block;
+        }
+
+        /* Dreptunghiuri pentru informatii */
+        .info-box {
+            background-color: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .info-box:hover {
+            transform: translateY(-5px);
         }
 
         /* Meniul derulant din dreapta */
@@ -84,10 +110,11 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #444;
+            background-color: #FDB813; /* Galben */
             min-width: 160px;
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
             z-index: 1;
+            border-radius: 5px;
         }
 
         .dropdown:hover .dropdown-content {
@@ -95,14 +122,26 @@
         }
 
         .dropdown-content a {
-            color: white;
+            color: #333;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
+            transition: background-color 0.3s;
         }
 
         .dropdown-content a:hover {
-            background-color: #575757;
+            background-color: #FF6F00; 
+        }
+
+        /* Pagina de home */
+        main {
+            padding: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #009C91; 
         }
 
     </style>
@@ -110,51 +149,76 @@
 <body>
 
     <header class="navbar">
-        <a href="#" class="logo">Logo</a>
-        <ul class="menu">
-            <li><a href="#">Categoria 1</a>
-                <ul class="submenu">
-                    <li><a href="#">Subcategoria 1.1</a></li>
-                    <li><a href="#">Subcategoria 1.2</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Categoria 2</a>
-                <ul class="submenu">
-                    <li><a href="#">Subcategoria 2.1</a></li>
-                    <li><a href="#">Subcategoria 2.2</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Categoria 3</a>
-                <ul class="submenu">
-                    <li><a href="#">Subcategoria 3.1</a></li>
-                    <li><a href="#">Subcategoria 3.2</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Categoria 4</a>
-                <ul class="submenu">
-                    <li><a href="#">Subcategoria 4.1</a></li>
-                    <li><a href="#">Subcategoria 4.2</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Categoria 5</a>
-                <ul class="submenu">
-                    <li><a href="#">Subcategoria 5.1</a></li>
-                    <li><a href="#">Subcategoria 5.2</a></li>
-                </ul>
-            </li>
-        </ul>
-        <div class="dropdown">
-            <a href="#" class="logo">Meniu Derulant</a>
-            <div class="dropdown-content">
-                <a href="#">Submeniul 1</a>
-                <a href="#">Submeniul 2</a>
-                <a href="#">Submeniul 3</a>
-            </div>
+    <a href="#" class="logo">
+        <img src="pictograme/logo.png" alt="Logo" style="height: 70px;"> 
+    </a>
+    <ul class="menu">
+        <li><a href="#">Despre</a>
+            <ul class="submenu">
+                <li><a href="#">Așezare</a></li>
+                <li><a href="#">Căi de acces</a></li>
+				<li><a href="#">Climă</a></li>
+                <li><a href="#">Cadrul natural</a></li>
+				<li><a href="#">Istorie</a></li>
+                <li><a href="#">Demografie</a></li>
+				<li><a href="#">Politică și administrație</a></li>
+                <li><a href="#">Căi de acces</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Statiunea Amara</a>
+            <ul class="submenu">
+                <li><a href="#">Lacul Amara</a></li>
+                <li><a href="#">Namol Sapropelic</a></li>
+				<li><a href="#">Parcul Dendrologic</a></li>
+				<li><a href="#">Repere balneare</a></li>
+                <li><a href="#">Resurse balneoclimatice și particularități de cură</a></li>
+				<li><a href="#">Baza turistică și de agrement</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Cazari</a>
+            <ul class="submenu">
+                <li><a href="#">Complex Hotelier Parc</a></li>
+                <li><a href="#">Complex Hotelier Ialomita</a></li>
+				<li><a href="#">Hotel Restaurant Evergreen</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Activitati si evenimente</a>
+            <ul class="submenu">
+                <li><a href="#">Hidrobiciclete</a></li>
+                <li><a href="#">Paddle Boards</a></li>
+				<li><a href="#">Trofeul Tineretii</a></li>
+				<li><a href="#">Proceduri</a></li>
+				<li><a href="#">Tabara "Pavilioane"</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Galerie</a>
+            <ul class="submenu">
+                <li><a href="#">Statiune</a></li>
+                <li><a href="#">Orasul Amara</a></li>
+				<li><a href="#">Trofeul Tineretii</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="dropdown">
+        <a href="#" class="logo">Meniu Derulant</a>
+        <div class="dropdown-content">
+            <a href="#">Submeniul 1</a>
+            <a href="#">Submeniul 2</a>
+            <a href="#">Submeniul 3</a>
         </div>
-    </header>
+    </div>
+</header>
 
     <main>
-        <h1>Pagina in lucru!!!</h1>
+        <h1>Pagina în lucru!!!</h1>
+        <div class="info-box">
+            <h2>Info1</h2>
+            <p>text</p>
+        </div>
+        <div class="info-box">
+            <h2>Info2</h2>
+            <p>text</p>
+        </div>
     </main>
 
 </body>
