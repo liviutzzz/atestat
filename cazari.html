@@ -2,7 +2,7 @@
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
-    <title>Statiunea Amara</title>
+    <title>Despre</title>
     <link rel="stylesheet" href="style.css">
     <style>
         * {
@@ -22,7 +22,7 @@
         .navbar {
             display: flex;
             justify-content: space-between;
-            background: linear-gradient(to right, #00C5A3, #009C91); 
+            background: linear-gradient(to right, #00C5A3, #009C91);
             padding: 15px 30px;
         }
 
@@ -65,7 +65,7 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: #FDB813; 
+            background-color: #FDB813;
             min-width: 200px;
             border-radius: 5px;
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
@@ -78,7 +78,7 @@
         }
 
         .submenu li a:hover {
-            background-color: #FF6F00; 
+            background-color: #FF6F00;
         }
 
         /* Afisare submeniuri la hover */
@@ -100,6 +100,24 @@
             transform: translateY(-5px);
         }
 
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            border: 2px solid #333; /* Border vizibil */
+        }
+
+        th, td {
+            border: 2px solid #333; /* Border clar */
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+
         /* Pagina despre */
         main {
             padding: 50px;
@@ -107,7 +125,7 @@
 
         h1 {
             font-size: 36px;
-            color: #009C91; 
+            color: #009C91;
         }
 
         section h2 {
@@ -120,32 +138,357 @@
             font-size: 18px;
             line-height: 1.6;
             margin-bottom: 20px;
+            text-align: justify;
         }
+
+        /* Stiluri pentru contentul din secțiuni */
+        .content-box {
+            overflow: hidden; /* Evită problemele cu float */
+        }
+
+        .content-box img {
+            max-width: 250px; /* Ajustează dimensiunea imaginii */
+            height: auto;
+            border-radius: 10px;
+            margin: 10px 15px 10px 0; /* Spațiere între imagine și text (pentru imaginea din stânga) */
+            float: left; /* Default: imaginea în stânga */
+        }
+
+        .content-box .right-image { /* Facem selectorul mai specific */
+            float: right; /* Dacă vrei imaginea în dreapta */
+            margin: 10px 0 10px 15px; /* Spațiere corectă pe partea stângă */
+        }
+
+        .content-box p {
+            text-align: justify;
+            overflow: hidden; /* Evită problemele cu alinierea */
+        }
+
+        /* Clearfix pentru a preveni colapsarea containerului după float-uri */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+		
+		    #booking {
+        background-color: #f9f9f9;
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+        max-width: 700px;
+        margin: 50px auto;
+        font-family: Arial, sans-serif;
+    }
+
+    #booking h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    #booking form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #booking label {
+        margin: 10px 0 5px;
+        font-weight: bold;
+    }
+
+    #booking input,
+    #booking select,
+    #booking textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    #booking textarea {
+        resize: vertical;
+        min-height: 80px;
+    }
+
+    #booking button[type="submit"] {
+        margin-top: 20px;
+        padding: 12px;
+        background-color: #007bff;
+        color: white;
+        font-size: 1rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    #booking button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    #booking .success-message {
+        text-align: center;
+    }
+
+    #booking .success-message button {
+        margin-top: 20px;
+        font-size: 1rem;
+    }
+	
+
+.slider-wrapper {
+  overflow: hidden;
+  width: calc(300px * 5); /* 5 imagini vizibile */
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slider img {
+  width: 300px;
+  height: auto;
+}
+
+
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Adăugăm poziționare relativă */
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 156, 145, 0.8);
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.prev:hover, .next:hover {
+  background-color: #00786e;
+}
+
+.prev {
+  left: 5px; /* Săgeata din stânga */
+}
+
+.next {
+  right: 5px; /* Săgeata din dreapta */
+}
+
+
     </style>
 </head>
 <body>
 
 <!-- Contenutul paginii cazari -->
 <main>
-    <h1>Cazari</h1>
+    <h1>Cazări</h1>
     
     <!-- Secțiunea Complex Hotelier Parc -->
-    <section id="parc" class="info-box">
-        <h2>Complex Hotelier Parc</h2>
-        <p>Informații despre Complex Hotelier Parc...</p>
-    </section>
+<section id="parc" class="info-box">
+  <div class="content-box">
+    <div class="text-column">
+      <h2>Complex Hotelier Parc</h2>
+      <p>Situat în inima stațiunii Amara, Complexul Hotelier Parc oferă 104 camere duble standard, 6 camere duble superioare și 2 apartamente dotate cu jacuzzi sau cadă cu vibromasaj. Camerele sunt echipate cu aer condiționat, baie privată, mobilier modern și Wi-Fi gratuit. Complexul dispune de o bază de tratament, restaurant, trei săli de mese, sală de conferințe, bar, două terase, parcare păzită și plajă proprie amenajată cu terase, dușuri, șezlonguri, tobogan acvatic și bazin pentru copii. Plaja privată se află la doar câțiva pași de hotel, oferind acces la nămol terapeutic și apele sărate ale lacului Amara. Pentru mai multe informații și rezervări, vizitați site-ul oficial: amara-parc.ro.​</p>
+    </div>
+    <div class="slider-column">
+      <div class="slider-container">
+        <button class="prev" onclick="changeSlide('parc', -1)">&#10094;</button>
+        <div class="slider-wrapper">
+          <div class="slider" id="parc-slider">
+            <img src="imagini/parc1.jpg" alt="Parc 1">
+            <img src="imagini/parc2.jpg" alt="Parc 2">
+            <img src="imagini/parc3.jpg" alt="Parc 3">
+            <img src="imagini/parc4.jpg" alt="Parc 4">
+            <img src="imagini/parc5.jpg" alt="Parc 5">
+            <img src="imagini/parc6.jpg" alt="Parc 6">
+            <img src="imagini/parc7.jpg" alt="Parc 7">
+            <img src="imagini/parc8.jpg" alt="Parc 8">
+            <img src="imagini/parc9.jpg" alt="Parc 9">
+            <img src="imagini/parc10.jpg" alt="Parc 10">
+          </div>
+        </div>
+        <button class="next" onclick="changeSlide('parc', 1)">&#10095;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secțiunea Hotel Ialomita -->
+<section id="ialomita" class="info-box">
+  <div class="content-box">
+    <div class="text-column">
+      <h2>Complex Hotelier Ialomita</h2>
+      <p>Clasificat la categoria de trei stele, Complexul Hotelier Ialomița este situat pe malul nord-vestic al lacului Amara. Oferă 23 de camere single, 222 de camere duble și 7 apartamente, toate dotate cu aer condiționat, minibar, telefon, TV LCD și baie privată. Unele camere au balcon. Facilitățile includ un restaurant cu 240 de locuri, bar, grădină de vară cu 200 de locuri, salon de evenimente Amethyst, două săli de conferințe (Vienna și Dublin) echipate modern, bază de tratament, plajă proprie, centru SPA și cabinet de estetică medicală. Pentru detalii suplimentare și rezervări, accesați: hotelialomita.ro.​</p>
+    </div>
+    <div class="slider-column">
+      <div class="slider-container">
+        <button class="prev" onclick="changeSlide('ialomita', -1)">&#10094;</button>
+        <div class="slider-wrapper">
+          <div class="slider" id="ialomita-slider">
+            <img src="imagini/ialomita1.jpg" alt="Ialomita 1">
+            <img src="imagini/ialomita2.jpg" alt="Ialomita 2">
+            <img src="imagini/ialomita3.jpeg" alt="Ialomita 3">
+			<img src="imagini/ialomita4.jpg" alt="Ialomita 4">
+            <img src="imagini/ialomita5.jpeg" alt="Ialomita 5">
+            <img src="imagini/ialomita6.jpg" alt="Ialomita 6">
+			<img src="imagini/ialomita7.jpg" alt="Ialomita 7">
+            <img src="imagini/ialomita8.jpeg" alt="Ialomita 8">
+            <img src="imagini/ialomita9.jpeg" alt="Ialomita 9">
+			<img src="imagini/ialomita10.jpg" alt="Ialomita 10">
+          </div>
+        </div>
+        <button class="next" onclick="changeSlide('ialomita', 1)">&#10095;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secțiunea Hotel Evergreen -->
+<section id="evergreen" class="info-box">
+  <div class="content-box">
+    <div class="text-column">
+      <h2>Hotel Restaurant Evergreen</h2>
+      <p>Hotelul Evergreen, clasificat la patru stele, este amplasat pe malul lacului Amara și oferă 37 de camere moderne, unele cu vedere la lac. Facilitățile includ un restaurant elegant, trei terase cu vedere la lac, două piscine (una pentru copii), saună, sală de conferințe și loc de joacă pentru copii. Hotelul este apreciat pentru liniștea și curățenia oferite, precum și pentru izolația fonică excelentă. Pentru mai multe informații și rezervări, vizitați: hotel-evergreen.ro.</p>
+    </div>
+    <div class="slider-column">
+      <div class="slider-container">
+        <button class="prev" onclick="changeSlide('evergreen', -1)">&#10094;</button>
+        <div class="slider-wrapper">
+          <div class="slider" id="evergreen-slider">
+            <img src="imagini/evergreen1.jpeg" alt="Evergreen 1">
+            <img src="imagini/evergreen2.jpg" alt="Evergreen 2">
+            <img src="imagini/evergreen3.jpg" alt="Evergreen 3">
+			<img src="imagini/evergreen4.jpg" alt="Evergreen 4">
+            <img src="imagini/evergreen5.jpeg" alt="Evergreen 5">
+            <img src="imagini/evergreen6.jpeg" alt="Evergreen 6">
+			<img src="imagini/evergreen7.jpg" alt="Evergreen 7">
+            <img src="imagini/evergreen8.jpg" alt="Evergreen 8">
+            <img src="imagini/evergreen9.jpeg" alt="Evergreen 9">
+			<img src="imagini/evergreen10.jpg" alt="Evergreen 10">
+          </div>
+        </div>
+        <button class="next" onclick="changeSlide('evergreen', 1)">&#10095;</button>
+      </div>
+    </div>
+  </div>
+</section>
+	
+	<!-- Secțiunea Booking pentru Grupuri Mari -->
+<section id="booking">
+    <h2>Rezervare pentru grupuri mari</h2>
+    <p style="text-align: center;">Completează formularul pentru a primi o ofertă personalizată.</p>
+    <form id="bookingForm">
+        <label for="hotel">Alege hotelul:</label>
+        <select id="hotel" name="hotel" required>
+            <option value="">-- Selectează --</option>
+            <option value="Parc">Complex Hotelier Parc</option>
+            <option value="Ialomita">Complex Hotelier Ialomita</option>
+            <option value="Evergreen">Hotel Restaurant Evergreen</option>
+        </select>
+
+        <label for="roomType">Tipul de cameră:</label>
+        <select id="roomType" name="roomType" required>
+            <option value="">-- Selectează --</option>
+            <option value="Single">Single</option>
+            <option value="Dublă Standard">Dublă Standard</option>
+            <option value="Dublă Superioară">Dublă Superioară</option>
+            <option value="Apartament">Apartament</option>
+        </select>
+
+        <label for="checkin">Check-in:</label>
+        <input type="datetime-local" id="checkin" name="checkin" required>
+
+        <label for="checkout">Check-out:</label>
+        <input type="datetime-local" id="checkout" name="checkout" required>
+
+        <label for="guests">Număr estimativ de persoane:</label>
+        <input type="number" id="guests" name="guests" min="1" required>
+
+        <label for="contactName">Nume:</label>
+        <input type="text" id="contactName" name="contactName" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="telefon">Telefon:</label>
+        <input type="tel" id="telefon" name="telefon" pattern="[0-9]{10}" placeholder="07XXXXXXXX" required>
+
+        <label for="mesaj">Mesaj opțional:</label>
+        <textarea id="mesaj" name="mesaj" placeholder="Scrie aici orice detalii adiționale..."></textarea>
+
+        <button type="submit">Trimite solicitarea</button>
+    </form>
+
+    <div class="success-message" id="bookingSuccess" style="display:none;">
+        <p style="color: green; font-weight: bold;">Solicitarea ta a fost trimisă! Te vom contacta în cel mai scurt timp cu o ofertă personalizată.</p>
+        <button onclick="resetBookingForm()" style="background-color: #FF6F00; color: white; padding: 10px 20px; border: none; border-radius: 8px;">Trimite altă solicitare</button>
+    </div>
+</section>
+
+<script>
+    const bookingForm = document.getElementById('bookingForm');
+    const bookingSuccess = document.getElementById('bookingSuccess');
+
+    bookingForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        bookingForm.style.display = 'none';
+        bookingSuccess.style.display = 'block';
+    });
+
+    function resetBookingForm() {
+        bookingForm.reset();
+        bookingForm.style.display = 'flex';
+        bookingSuccess.style.display = 'none';
+    }
+	
+  // Funcția pentru schimbarea slide-urilor
+function changeSlide(sectionId, direction) {
+    const slider = document.getElementById(sectionId + '-slider');
+    const slides = slider.querySelectorAll('img');
+    let currentIndex = parseInt(slider.getAttribute('data-current-slide')) || 0;
+    const totalSlides = slides.length;
     
-    <!-- Secțiunea Complex Hotelier Ialomita -->
-    <section id="ialomita" class="info-box">
-        <h2>Complex Hotelier Ialomita</h2>
-        <p>Informații despre Complex Hotelier Ialomita...</p>
-    </section>
+    // Calculăm noul index
+    currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
     
-    <!-- Secțiunea Hotel Restaurant Evergreen -->
-    <section id="evergreen" class="info-box">
-        <h2>Hotel Restaurant Evergreen</h2>
-        <p>Informații despre Hotel Restaurant Evergreen...</p>
-    </section>
+    // Actualizăm atributul data-current-slide
+    slider.setAttribute('data-current-slide', currentIndex);
+    
+    // Calculăm poziția și mișcăm sliderul
+    const slideWidth = slides[0].clientWidth;
+    slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+}
+
+// Event listener pentru butoanele prev și next
+document.querySelectorAll('.prev').forEach(button => {
+    button.addEventListener('click', function() {
+        const sectionId = button.closest('.slider-container').parentNode.id;
+        changeSlide(sectionId, -1); // Schimbă la imaginea anterioară
+    });
+});
+
+document.querySelectorAll('.next').forEach(button => {
+    button.addEventListener('click', function() {
+        const sectionId = button.closest('.slider-container').parentNode.id;
+        changeSlide(sectionId, 1); // Schimbă la imaginea următoare
+    });
+});
+
+</script>
+
 </main>
 
 

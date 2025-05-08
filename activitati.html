@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Despre</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Corpul paginii */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            color: #333;
+        }
+
+        /* Meniul de navigare */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background: linear-gradient(to right, #00C5A3, #009C91);
+            padding: 15px 30px;
+        }
+
+        /* Logo */
+        .logo {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Meniul principal */
+        .menu {
+            list-style-type: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .menu li {
+            position: relative;
+            padding: 10px;
+        }
+
+        .menu li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .menu li a:hover {
+            background-color: #00C5A3;
+        }
+
+        /* Submeniuri */
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #FDB813;
+            min-width: 200px;
+            border-radius: 5px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .submenu li a {
+            padding: 10px;
+            color: #333;
+            transition: background-color 0.3s;
+        }
+
+        .submenu li a:hover {
+            background-color: #FF6F00;
+        }
+
+        /* Afisare submeniuri la hover */
+        .menu li:hover .submenu {
+            display: block;
+        }
+
+        /* Dreptunghiuri pentru informatii */
+        .info-box {
+            background-color: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .info-box:hover {
+            transform: translateY(-5px);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            border: 2px solid #333; /* Border vizibil */
+        }
+
+        th, td {
+            border: 2px solid #333; /* Border clar */
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+
+        /* Pagina despre */
+        main {
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #009C91;
+        }
+
+        section h2 {
+            color: #00C5A3;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        section p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* Stiluri pentru contentul din secțiuni */
+        .content-box {
+            overflow: hidden; /* Evită problemele cu float */
+        }
+
+        .content-box img {
+            max-width: 250px; /* Ajustează dimensiunea imaginii */
+            height: auto;
+            border-radius: 10px;
+            margin: 10px 15px 10px 0; /* Spațiere între imagine și text (pentru imaginea din stânga) */
+            float: left; /* Default: imaginea în stânga */
+        }
+
+        .content-box .right-image { /* Facem selectorul mai specific */
+            float: right; /* Dacă vrei imaginea în dreapta */
+            margin: 10px 0 10px 15px; /* Spațiere corectă pe partea stângă */
+        }
+
+        .content-box p {
+            text-align: justify;
+            overflow: hidden; /* Evită problemele cu alinierea */
+        }
+
+        /* Clearfix pentru a preveni colapsarea containerului după float-uri */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Contenutul paginii activitati -->
+<main>
+    <h1>Activități și evenimente</h1>
+    
+    <!-- Secțiunea Hidrobiciclete -->
+    <section id="hidrobiciclete" class="info-box">
+	<div class="content-box clearfix">
+        <h2>Hidrobiciclete</h2>
+        <p>Pe lacul Amara, turiștii pot închiria hidrobiciclete pentru a petrece momente relaxante pe apă, în special în timpul sezonului cald. Acestea sunt disponibile în zonele amenajate de pe mal, cum ar fi plaja Splendid sau pontoanele special construite în cadrul Complexului Hotelier Ialomița. Activitatea este potrivită pentru familii și grupuri de prieteni, fiind o modalitate accesibilă și plăcută de a explora împrejurimile lacului într-un ritm lent și sigur.</p>
+		</div>
+    </section>
+    
+    <!-- Secțiunea Paddle Boards -->
+    <section id="paddleb" class="info-box">
+	<div class="content-box clearfix">
+        <h2>Paddle Boards</h2>
+        <p>Pasionații de activități nautice mai dinamice pot opta pentru paddle board (stand-up paddle), o formă de relaxare și exercițiu în același timp. Paddle board-urile pot fi închiriate de la „Senin pe Ape”, un furnizor local specializat în activități pe apă. Aceștia oferă echipamente moderne și, în unele cazuri, cursuri introductive pentru începători. Paddle board-ul este ideal pentru cei care doresc să combine mișcarea cu peisajul calm al lacului Amara într-o atmosferă liniștită și naturală.</p>
+		</div>
+    </section>
+    
+    <!-- Secțiunea Trofeul Tineretii -->
+    <section id="trofeu" class="info-box">
+	<div class="content-box clearfix">
+        <h2>Trofeul Tineretii</h2>
+        <p>Trofeul Tinereții de la Amara este un festival de muzică ușoară românească, ce s-a impus ca fiind al doilea de gen din țară după Festivalul Național de Muzică Ușoară de la Mamaia.</p>
+
+<p>Acesta se desfășoară în luna august la grădina de vară din orașul Amara. În trecut a mai avut loc și în Municipiul Slobozia. Este singurul care aparține genului în România, și care a ajuns la 49 de ediții fără a fi întrerupt.</p>
+
+<p>Pe scena festivalului:</p>
+
+<p>S-au perindat o seamă de concurenți din rândul cărora s-au desprins ulterior interpreți de marcă: Janina Matei, Mihaela Runceanu, Angela Ciochină, Aurel Moga, Marina Scupra, Aurel Moldoveanu. Aici de-a lungul timpului, au urcat nume sonore ale muzicii ușoare românești: Gică Petrescu, Luigi Ionescu, Doina Badea, Marina Voica, Aurelian Andreescu, George Nicolescu, Mircea și Adrian Romcescu, Monica Anghel, Sanda Ladoși, Marcel Pavel, Carmen Rădulescu, Madalina Manole, Laura Stoica, Anca Țurcașiu, Daniela Gyorfi, Gabriel Cotabiță, Ricky Dandel.
+De asemeni, tot aici au concertat trupe în vogă ale momentului: 3 Sud Est, Andrè, ASIA, Valahia, Latin Expres, Iris, Talisman, RoMania, Voltaj, Holograf, Bosquito, Genius, Candy, Schimbul 3, Blondy, Double D, Body&Soul, Amadeus, Direcția 5, Pops, Akcent, Sistem, Corina, Nico, Mihai Traistariu, Hi-Q, Montuga, Bordo, Hara, Anna Lesko, Fly Project, Simplu, Ștefan Bănică (junior).
+Alături de compozitori și muzicologi reprezentativi ai componisticii și muzicologiei românești: Nicolae Kirculescu, Vasile Donose, Mircea Neagu, Ion Cristinoiu, Horia Moculescu, Dani Constantin, Ionel Tudor, Șerban Georgescu, la Amara se întâlnesc de fiecare dată redactori muzicologi ai Radioului și Televiziunii Române, realizatori de emisiuni muzicale, precum și editori ai Casei de Discuri Electrecord.
+S-au aflat jurii formate din mari personalități ale vieții muzicale și artistice românești, și cei mai cunoscuți prezentatori de spectacole și festivaluri din țară, care au conferit prestigiu acestui festival.
+</p>
+		</div>
+    </section>
+    
+    <!-- Secțiunea Proceduri -->
+    <section id="proceduri" class="info-box">
+	<div class="content-box clearfix">
+        <h2>Proceduri</h2>
+        <p>Stațiunea Amara oferă o gamă variată de proceduri balneare bazate pe resurse naturale valoroase, precum nămolul sapropelic și apele minerale din lacul cu același nume. Printre tratamentele cele mai utilizate se numără împachetările și băile cu nămol cald, recomandate pentru afecțiuni reumatismale, musculare și articulare, dar și pentru recuperare post-traumatică. Nămolul este aplicat local sau pe tot corpul, având efect antiinflamator, detoxifiant și de stimulare a circulației. De asemenea, se practică băi în cadă cu apă minerală, cataplasme cu nămol rece, dușuri subacvatice și băi galvanice. Procedurile sunt completate de electroterapie, pentru reducerea durerii și relaxarea musculară, și aerohelioterapie – expunerea controlată la aer și soare – cu rol benefic în întărirea imunității și revitalizarea organismului. Toate tratamentele se desfășoară sub supraveghere medicală, fiind adaptate fiecărui pacient în funcție de afecțiuni și recomandări.
+</p>
+		</div>
+    </section>
+    
+    <!-- Secțiunea Tabara "Pavilioane" -->
+    <section id="pavilioane" class="info-box">
+	<div class="content-box clearfix">
+        <h2>Tabara "Pavilioane"</h2>
+        <p>Tabăra „Pavilioane” este situată într-un cadru natural deosebit, înconjurată de păduri de salcâm și plantații de foioase. Centrul de agrement oferă 120 de locuri de cazare pe serie, în camere cu 2-4 paturi, grupuri sanitare și dușuri comune. Facilitățile includ o bucătărie modernă, sală de mese, încălzire centrală, apă caldă non-stop și baze sportive complexe, precum terenuri de handbal, volei, tenis de câmp și de masă, poligon pentru automodele și trasee pentru alergare . Tabăra organizează diverse activități recreative și educative pentru copii, fiind o destinație populară în sezonul estival.​</p>
+		</div>
+    </section>
+</main>
+
+
+
+</body>
+</html>

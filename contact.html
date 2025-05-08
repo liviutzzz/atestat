@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Galerie</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background: linear-gradient(to right, #00C5A3, #009C91);
+            padding: 15px 30px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .menu {
+            list-style-type: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .menu li {
+            position: relative;
+            padding: 10px;
+        }
+
+        .menu li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .menu li a:hover {
+            background-color: #00C5A3;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #FDB813;
+            min-width: 200px;
+            border-radius: 5px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .submenu li a {
+            padding: 10px;
+            color: #333;
+            transition: background-color 0.3s;
+        }
+
+        .submenu li a:hover {
+            background-color: #FF6F00;
+        }
+
+        .menu li:hover .submenu {
+            display: block;
+        }
+
+        main {
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #009C91;
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            color: #00C5A3;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            max-width: 100%;
+            height: 400px;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slider img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 156, 145, 0.8);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: #00786e;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+		
+		label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        button {
+            margin-top: 25px;
+            background-color: #00C5A3;
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #009C91;
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .success-message p {
+            color: green;
+            font-weight: bold;
+        }
+
+        .success-message button {
+            background-color: #FF6F00;
+            margin-top: 10px;
+        }
+		
+		.map-container {
+    margin-top: 40px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+    </style>
+</head>
+<body>
+
+<main>
+    <h1>Contactează-ne!</h1>
+
+    <div class="contact-container">
+        <form id="contactForm">
+            <label for="nume">Nume:</label>
+            <input type="text" id="nume" name="nume" required>
+
+            <label for="prenume">Prenume:</label>
+            <input type="text" id="prenume" name="prenume" required>
+
+            <label for="telefon">Număr de telefon:</label>
+            <input type="tel" id="telefon" name="telefon" pattern="[0-9]{10}" placeholder="07XXXXXXXX" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mesaj">Sugestii sau mesaje despre Stațiunea Amara:</label>
+            <textarea id="mesaj" name="mesaj" placeholder="Scrie aici sugestia ta..." required></textarea>
+
+            <button type="submit">Trimite mesajul</button>
+        </form>
+
+        <div class="success-message" id="successMessage">
+            <p>Mesajul a fost trimis cu succes!</p>
+            <button onclick="resetForm()">Trimite o altă solicitare</button>
+        </div>
+    </div>
+	
+	<div class="map-container">
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11351.287693805095!2d27.326918!3d44.61745!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b7c273658ad75f%3A0xd72d2a0ff786cd9b!2sAmara%2C%20Jude%C8%9Bul%20Ialomi%C8%9Ba!5e0!3m2!1sro!2sro!4v1715082000000!5m2!1sro!2sro"
+        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+</main>
+
+<script>
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault(); // prevenim trimiterea reală
+        form.style.display = 'none';
+        successMessage.style.display = 'block';
+    });
+
+    function resetForm() {
+        form.reset();
+        form.style.display = 'block';
+        successMessage.style.display = 'none';
+    }
+</script>
+
+</body>
+</html>

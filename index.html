@@ -2,8 +2,7 @@
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
-    <title>Pagina principală</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Orașul Amara</title>
     <style>
         * {
             margin: 0;
@@ -11,7 +10,6 @@
             box-sizing: border-box;
         }
 
-        /* Corpul paginii */
         body {
             font-family: Arial, sans-serif;
             background-color: #f1f1f1;
@@ -19,30 +17,34 @@
             display: flex;
             flex-direction: column;
             height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* Meniul de navigare */
         .navbar {
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            background: linear-gradient(to right, #00C5A3, #009C91); 
+            background: linear-gradient(to right, #00C5A3, #009C91);
             padding: 15px 30px;
+            width: 100%;
+            height: 80px;
+        }
+
+        .logo {
             flex-shrink: 0;
         }
 
-        /* Logo */
-        .logo {
-            color: white;
-            font-size: 24px;
-            text-decoration: none;
-            font-weight: bold;
+        .menu-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
         }
 
-        /* Meniul principal */
         .menu {
             list-style-type: none;
             display: flex;
             gap: 30px;
+            align-items: center;
         }
 
         .menu li {
@@ -63,16 +65,18 @@
             background-color: #00C5A3;
         }
 
-        /* Submeniuri */
         .submenu {
             display: none;
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: #FDB813; 
+            background-color: #FDB813;
             min-width: 200px;
             border-radius: 5px;
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            max-width: 250px;
+            overflow: hidden;
         }
 
         .submenu li a {
@@ -82,15 +86,30 @@
         }
 
         .submenu li a:hover {
-            background-color: #FF6F00; 
+            background-color: #FF6F00;
         }
 
-        /* Afisare submeniuri la hover */
         .menu li:hover .submenu {
             display: block;
         }
 
-        /* Containerul iframe */
+		.right-menu .submenu {
+			max-width: 200px; 
+			width: auto; 
+			padding: 0;
+			overflow: hidden; 
+			z-index: 1000;
+		}
+
+		.right-menu li:hover .submenu {
+			left: auto; 
+			right: 0; 
+		}
+
+    .right-menu {
+            flex-shrink: 0;
+        }
+		
         .iframe-container {
             width: 100%;
             flex-grow: 1;
@@ -102,48 +121,17 @@
             height: 100%;
             border: none;
         }
-
-        /* Meniul derulant */
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #FDB813; /* Galben */
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            border-radius: 5px;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-content a {
-            color: #333;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            transition: background-color 0.3s;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #FF6F00; 
-        }
-
     </style>
 </head>
 <body>
-
-<!-- Bara de navigare -->
 <header class="navbar">
-    <a href="index.html" class="logo">
-        <img src="pictograme/logo.png" alt="Logo" style="height: 70px;">
+    <a href="pictograme/logo1.png" class="logo" target="_blank">
+        <img src="pictograme/logo1.png" alt="Logo" style="height: 70px;">
     </a>
-    <ul class="menu">
+
+    <div class="menu-container">
+        <ul class="menu">
+            <!-- Sectiunea Despre -->
         <li><a href="despre.html" target="main-frame">Despre</a>
             <ul class="submenu"> 
                 <li><a href="despre.html#asezare" target="main-frame">Așezare</a></li>
@@ -153,7 +141,9 @@
                 <li><a href="despre.html#politica" target="main-frame">Politică</a></li>
             </ul>
         </li>
-        <li><a href="statiunea-amara.html" target="main-frame">Statiunea Amara</a>
+
+        <!-- Sectiunea Statiune -->
+        <li><a href="statiunea-amara.html" target="main-frame">Stațiunea Amara</a>
             <ul class="submenu">
                 <li><a href="statiunea-amara.html#laculamara" target="main-frame">Lacul Amara</a></li>
                 <li><a href="statiunea-amara.html#namolsapropelic" target="main-frame">Namol Sapropelic</a></li>
@@ -163,41 +153,56 @@
                 <li><a href="statiunea-amara.html#bazaturistica" target="main-frame">Baza turistică și de agrement</a></li>
             </ul>
         </li>
-        <li><a href="cazari.html" target="main-frame">Cazari</a>
+
+        <!-- Sectiunea Activitati -->
+        <li><a href="activitati.html" target="main-frame">Activități și evenimente</a>
+            <ul class="submenu">
+                <li><a href="activitati.html#hidrobiciclete" target="main-frame">Hidrobiciclete</a></li>
+                <li><a href="activitati.html#paddleb" target="main-frame">Paddle Boards</a></li>
+                <li><a href="activitati.html#trofeu" target="main-frame">Trofeul Tineretii</a></li>
+                <li><a href="activitati.html#proceduri" target="main-frame">Proceduri</a></li>
+                <li><a href="activitati.html#pavilioane" target="main-frame">Tabara "Pavilioane"</a></li>
+            </ul>
+        </li>
+		
+		<!-- Sectiunea cazari -->
+        <li><a href="cazari.html" target="main-frame">Cazări</a>
             <ul class="submenu">
                 <li><a href="cazari.html#parc" target="main-frame">Complex Hotelier Parc</a></li>
                 <li><a href="cazari.html#ialomita" target="main-frame">Complex Hotelier Ialomita</a></li>
                 <li><a href="cazari.html#evergreen" target="main-frame">Hotel Restaurant Evergreen</a></li>
             </ul>
         </li>
-        <li><a href="#" target="main-frame">Activități și evenimente</a>
+
+        <!-- Sectiunea Galerie -->
+        <li><a href="galerie.html" target="main-frame">Galerie</a>
             <ul class="submenu">
-                <li><a href="#" target="main-frame">Hidrobiciclete</a></li>
-                <li><a href="#" target="main-frame">Paddle Boards</a></li>
-                <li><a href="#" target="main-frame">Trofeul Tineretii</a></li>
-                <li><a href="#" target="main-frame">Proceduri</a></li>
-                <li><a href="#" target="main-frame">Tabara "Pavilioane"</a></li>
+                <li><a href="galerie.html#statiune2" target="main-frame">Stațiune</a></li>
+                <li><a href="galerie.html#oamara" target="main-frame">Orașul Amara</a></li>
+                <li><a href="galerie.html#trofeul" target="main-frame">Trofeul Tineretii</a></li>
             </ul>
         </li>
-        <li><a href="#" target="main-frame">Galerie</a>
-            <ul class="submenu">
-                <li><a href="#" target="main-frame">Stațiune</a></li>
-                <li><a href="#" target="main-frame">Orașul Amara</a></li>
-                <li><a href="#" target="main-frame">Trofeul Tineretii</a></li>
+
+        </ul>
+    </div>
+
+    <div class="right-menu">
+	<ul class="menu">
+        <li><a href="meniu.html" target="main-frame" style="color: white; text-decoration: none; font-size: 18px;">Meniu</a>
+        <!-- Sectiunea Meniu (dreapta) -->
+           <ul class="submenu">
+                <li><a href="despre.html" target="main-frame">Despre</a></li>
+                <li><a href="statiunea-amara.html" target="main-frame">Stațiunea Amara</a></li>
+                <li><a href="activitati.html" target="main-frame">Activități si evenimente</a></li>
+				<li><a href="cazari.html" target="main-frame">Cazări</a></li>
+                <li><a href="galerie.html" target="main-frame">Galerie</a></li>
+				<li><a href="contact.html" target="main-frame">Contactează-ne</a></li>
             </ul>
         </li>
-    </ul>
-    <div class="dropdown">
-        <a href="#" target="main-frame">Meniu Derulant</a>
-        <div class="dropdown-content">
-            <a href="#" target="main-frame">Submeniul 1</a>
-            <a href="#" target="main-frame">Submeniul 2</a>
-            <a href="#" target="main-frame">Submeniul 3</a>
-        </div>
+		</ul>
     </div>
 </header>
 
-<!-- Container pentru iframe -->
 <div class="iframe-container">
     <iframe name="main-frame" src="despre.html"></iframe>
 </div>

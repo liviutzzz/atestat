@@ -2,7 +2,7 @@
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
-    <title>Statiunea Amara</title>
+    <title>Despre</title>
     <link rel="stylesheet" href="style.css">
     <style>
         * {
@@ -22,7 +22,7 @@
         .navbar {
             display: flex;
             justify-content: space-between;
-            background: linear-gradient(to right, #00C5A3, #009C91); 
+            background: linear-gradient(to right, #00C5A3, #009C91);
             padding: 15px 30px;
         }
 
@@ -65,7 +65,7 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: #FDB813; 
+            background-color: #FDB813;
             min-width: 200px;
             border-radius: 5px;
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
@@ -78,7 +78,7 @@
         }
 
         .submenu li a:hover {
-            background-color: #FF6F00; 
+            background-color: #FF6F00;
         }
 
         /* Afisare submeniuri la hover */
@@ -100,6 +100,24 @@
             transform: translateY(-5px);
         }
 
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            border: 2px solid #333; /* Border vizibil */
+        }
+
+        th, td {
+            border: 2px solid #333; /* Border clar */
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+
         /* Pagina despre */
         main {
             padding: 50px;
@@ -107,7 +125,7 @@
 
         h1 {
             font-size: 36px;
-            color: #009C91; 
+            color: #009C91;
         }
 
         section h2 {
@@ -120,6 +138,37 @@
             font-size: 18px;
             line-height: 1.6;
             margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* Stiluri pentru contentul din secțiuni */
+        .content-box {
+            overflow: hidden; /* Evită problemele cu float */
+        }
+
+        .content-box img {
+            max-width: 250px; /* Ajustează dimensiunea imaginii */
+            height: auto;
+            border-radius: 10px;
+            margin: 10px 15px 10px 0; /* Spațiere între imagine și text (pentru imaginea din stânga) */
+            float: left; /* Default: imaginea în stânga */
+        }
+
+        .content-box .right-image { /* Facem selectorul mai specific */
+            float: right; /* Dacă vrei imaginea în dreapta */
+            margin: 10px 0 10px 15px; /* Spațiere corectă pe partea stângă */
+        }
+
+        .content-box p {
+            text-align: justify;
+            overflow: hidden; /* Evită problemele cu alinierea */
+        }
+
+        /* Clearfix pentru a preveni colapsarea containerului după float-uri */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
         }
     </style>
 </head>
@@ -131,39 +180,132 @@
     
     <!-- Secțiunea Lacul Amara -->
     <section id="laculamara" class="info-box">
+	<div class="content-box clearfix">
         <h2>Lacul Amara</h2>
-        <p>Informații despre Lacul Amara...</p>
+        <p>Lacul Amara este un lac natural - fost liman fluviatil barat cu aluviuni, situat într-o depresiune (Crivaia) - veche matcă a râului Ialomița - care nu mai are actual legătură cu râul. Se încadrează în partea estică a unității structurale Platforma Moesică. </p>
+<p>Este alimentat cu ape de șiroire (precipitații) care spală eflorescențele produse la suprafața rocilor din Câmpia Română și de către apele subterane (freatice) încărcate de săruri (predominant sulfați și cloruri). Sulfatul de magneziu si sulfatul de sodiu dizolvate în mare cantitate în apa lacului, îi dau gustul foarte amar care maschează gustul sau sărat. Prin lipsa alimentării constante cu apă dulce tot timpul anului și prin procesul de evaporare pe fondul climatului uscat, a crescut concentrația în săruri a apei.</p>
+<p>Lacul a prezentat o tendință de creștere a nivelului începând cu perioada 1965-1966. Valori de peste 4 m adâncime au fost atinse în anii 1970-1971; pentru a împiedica inundarea terenurilor și a construcțiilor din apropiere a fost construit un canal pentru evacuarea apei in exces. Aceastã mãsura a avut o mare influență negativă asupra salinității apei: dacă în 1887 concentrația de săruri a apei era de 89,45 g/l, în 1976 aceasta ajunsese la 7,7 g/l, ceea ce a favorizat dezvoltarea unei faune specifice apelor dulci. Concomitent s-a produs și reducerea proprietăților curative ale apei și nămolului, precum și scăderea rezervei de nămol.
+</p>
+		</div>
     </section>
     
     <!-- Secțiunea Namol Sapropelic -->
     <section id="namolsapropelic" class="info-box">
+	<div class="content-box clearfix">
         <h2>Namol Sapropelic</h2>
-        <p>Informații despre Namol Sapropelic...</p>
+        <p>Este negru (în contact cu aerul devenind cenușiu), unsuros, sărat și are un miros foarte puternic de hidrogen sulfurat. El conține 41% săruri anorganice, 39% substanțe organice și 20% apă. Substanțele pe care le conține sunt: sulfat de sodiu, calciu, fier sau magneziu; clorură de sodiu; hiposulfit de sodiu; hidrogen sulfurat; hidrocarbosulfit; carbonat de sodiu sau de calciu; sulf liber; acetat de sodiu; nitrat de amoniu; acid formic, glutamic butiric, propilic, clorofil-rezorcin, pirocatechin si erin. Grosimea stratului de nămol este de 30–60 cm.</p>
+<p>Lacul are forma literei S, suprafața sa atinge 132 ha, volum acestuia fiind de 2,6 milioane mc, aria acestuia având o lungime de 4,2 km și o lățime între 200 și 800 m. Adâncimea maximă actuală este de 3 m.</p>
+
+<p>Acest sit găzduiește efective importante ale unor specii de păsări protejate, fiind arie de protecție specială avifaunistică. Situl este important pentru populațiile cuibăritoare și în perioada de migrație.</p>
+
+<p>S-au regăsit astfel în zona Lacului Amara: 10 specii de păsări care necesită conservare: egreta mică, stârcul cenușiu, barza albă, lebada de vară, eretele de stuf, chira de baltă etc.), 30 de specii de păsări care necesită o protecție strictă (corcodelul mare, rața mică, rața sulițar, pescărușul argintiu, pescărușul sur, prigoria, chira de baltă, florintele etc.) și 14 specii de păsări de interes comunitar.</p>
+
+<p>Din punct de vedere fitogeografic, lacul se înscrie în subzona de vegetație naturală a stepei, mult modificată în prezent datorită agriculturii și pajiștilor antropice.</p>
+<p>Lacul este proprietate de stat fiind în administrarea RA Apele Romane -SGA Ialomița.
+</p>
+		</div>
     </section>
     
     <!-- Secțiunea Parcul Dendrologic -->
     <section id="parc" class="info-box">
+	<div class="content-box clearfix">
         <h2>Parcul Dendrologic</h2>
-        <p>Informații despre Parcul Dendrologic...</p>
+        <p>Parcul Dendrologic de la Amara este una dintre atracțiile naturale importante ale stațiunii Amara, situată în județul Ialomița. Acesta este un spațiu verde deosebit, unde vizitatorii se pot bucura de o colecție variată de specii de arbori și arbuști, unele dintre ele exotice.  </p>
+
+<p>Parcul se întinde pe o suprafață de aproximativ 64 de hectare și găzduiește numeroase specii de arbori, inclusiv salcâmi, stejari, pini și plopi, dar și specii rare sau exotice. Datorită diversității vegetației, zona oferă un habitat propice pentru diferite specii de păsări și alte viețuitoare.  </p>
+
+<p>Alei bine amenajate străbat parcul, oferind oportunități pentru plimbări relaxante și momente de liniște în mijlocul naturii. Băncile amplasate de-a lungul traseelor sunt ideale pentru odihnă, iar umbra arborilor face ca zona să fie atractivă în orice anotimp.  </p>
+
+<p>Parcul se află în apropierea Lacului Amara, cunoscut pentru apa sa sărată și proprietățile terapeutice. Acest aspect transformă parcul într-o destinație ideală atât pentru turiștii care vizitează stațiunea pentru tratamente balneare, cât și pentru cei care doresc să se bucure de frumusețea naturii.</p>
+		</div>
     </section>
     
     <!-- Secțiunea Repere Balneare -->
     <section id="reperebalneare" class="info-box">
+	<div class="content-box clearfix">
         <h2>Repere Balneare</h2>
-        <p>Informații despre Repere Balneare...</p>
+        <p>Lui Petru Poni i se datorează primele analize chimice ale apei și nămolului lacului în 1887, astfel prin publicațiile din aceea vreme făcându-se cunoscute compozițiile apei și nămolului sapropelic negru, bogat în sulf, magneziu și clorură de sodiu. În 1892 autoritățile județene au decis să înființeze un serviciu al băilor, însărcinat cu exploatarea instalațiilor de băi calde. Patru ani mai târziu în 1896, Amara era folosită amplu de populație, sezonier. Documentele timpului rețin ca bilanț al unui sezon de cură un număr de 452 de bolnavi și 3200 de băi.</p>
+
+<p>Prima instalație publică pentru băi calde a fost facută din scânduri în anul 1905, ea fiind distrusă în timpul Primului Război Mondial. În aceeași perioadă localnicii au făcut în locuințele lor instalații primitive de băi, încălzind apa și nămolul în cazane.</p>
+
+<p>Caracterele terapeutice ale lacului în comparație cu cele ale factorilor de cură din alte stațiuni balneare din țară, au fost descoperite mai târziu (1936), până atunci populația din împrejurimi folosind în boli reumatice - empiric apa și nămolul. Doar după al Doilea Razboi Mondial, au fost ridicate construcții destinate turismului balnear și a fost amenajată plaja pe malul lacului Amara pentru băi de soare.
+</p>
+		</div>
     </section>
     
     <!-- Secțiunea Resurse balneoclimatice și particularități de cură -->
     <section id="resursebalneo" class="info-box">
+	<div class="content-box clearfix">
         <h2>Resurse balneoclimatice și particularități de cură</h2>
-        <p>Informații despre Resurse balneoclimatice și particularități de cură...</p>
+        <p>Apa lacului (pentru cură externă) care este hipertonă sulfatată, clorurată-sodică, magneziană, slab bromurată, cu mineralizare variabilă.
+Nămolul sapropelic din lac
+Apa minerală (pentru cură internă) cu o mineralizare de 1632 mg/l de la sondă, care este sulfuroasă, slab sulfatată, bocarbonatată, sodică, megneziană, hipotonă
+Bioclimat de stepă, excitant - solicitant, parțial ameliorat de parcul stațiunii.
+Indicații terapeutice: Afecțiuni ale aparatului locomotor: reumatismale (degenerative, abarticulare, inflamatorii) sechelare post-traumatice, neurologice periferice
+Afecțiuni ginecologice
+Boli asociate: Afecțiuni dermatologice, boli profesionale, afecțiuni endocrine
+În cură internă, apa de la sondă poate folosi în:
+Afecțiuni hepatobiliare (coleretică), sechele după intervenții asupra căilor biliare
+Cure de diureză (Diateza urică, Gută, Litiazele urinare, Diabetul zaharat)
+Contraindicatii
+Generale pentru cura balneoclimatică la adulți.
+Speciale pentru cura balneoclimatică pentru patologii specifice.
+</p>
+		</div>
     </section>
     
     <!-- Secțiunea Baza turistică și de agrement -->
     <section id="bazaturistica" class="info-box">
+	<div class="content-box clearfix">
         <h2>Baza turistică și de agrement</h2>
-        <p>Informații despre Baza turistică și de agrement...</p>
+        <p>Locurile de cazare sunt grupate în principal în hoteluri, care au baze de tratament recuperator ce asigură executarea procedurilor de peloidoterapie, hidroterapie, terapie fizicală și kinetoterapie. Toate au plaje proprii.
+
+Lebăda: categoria două stele, capacitate de 944 locuri repartizate în doua corpuri de cazare, acționari sunt marile confederații sindicale.
+Ialomița: categoria trei stele, capacitate de 480 locuri, aflat în proprietatea Ministerului Muncii și Protecției Sociale. A beneficiat de investiții, în special după 1998.
+Complexul balnear Parc: este format din 2 hoteluri, de trei stele (Hotel Parc) cu 432 de locuri, respectiv patru stele (Hotel Dana) cu 78 locuri, capital integral privat. Este complet renovat.
+Vila Irina: capacitate 56 de locuri, aflată în administrarea Ministerului Justiției prin Administrația Națională a Penitenciarelor.
+
+Tabăra de copii Pavilioane, este amenajată din 1975, fiind situată într-o pădure de salcâm, plantație de foioase și livada de nuci. Are o capacitate de 110 locuri iar în curte se află o bază sportivă.
+
+Numeroase alte unități de cazare - moteluri, vile - completează oferta turistică.
+
+Există și un camping, cu căsuțe și loc pentru corturi.
+
+
+Plaje:
+
+Hoteliere: Lebăda, Splendid (Hotel Ialomița), Mircești (Complexul Parc)
+Plajă pentru copii - amenajată în cadrul Taberei de copii
+Plajă (în regim privat) pentru nudiști - amenajată cu secțiuni separate pentru femei și bărbați (Hotel Parc)
+Obiective turistice
+Locale
+Parcul dendrologic (care se întinde de-a lungul a 150 ha în lungul lacului Amara) și Herghelia Jegalia.
+
+De vecinătate
+Municipiul Slobozia
+
+Muzeul Județean (colecții de arheologie, artă plastică, istorie, artă populară)
+Muzeul Agriculturii
+Centrul Cultural „Ionel Perlea”
+Biserica ‘’Sfinții Voievozi’’ (fostă mănăstire construită în 1628)
+Monumentul Eroilor din Primul Război Mondial
+Arealul înconjurător:
+
+Lunca Ialomiței, Pădurea Sudiți, Crângul Frumos, Pădurea Buiești (rezervații cinegetice).
+Comuna Balaciu: Mănăstirea Balaciu - ridicată în 1750 de familia boierilor Piteșteanu
+Comuna Ciulnița: Biserica din lemn “Sfântul Nicolae”
+Comuna Ion Roată: Muzeul sătesc de etnografie
+Comuna Ograda: Casa Memorială "Ionel Perlea"
+Comuna Sinești: Conacul Marghiloman – construcție realizată între anii 1869 – 1874
+</p>
+		</div>
     </section>
+	
+	
+<a href="https://youtu.be/R8fMM73VrXs?si=NuhLcAkdILYwtsJi" target="_blank" style="display: block; text-align: center; margin-top: 20px;">
+  <img src="imagini/yt.png" alt="Thumbnail video" style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+  <p style="margin-top: 10px; font-weight: bold; color: #cc0000;">▶ Vezi videoclipul pe YouTube</p>
+</a>
 </main>
 
 

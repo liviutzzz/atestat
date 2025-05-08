@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Galerie</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background: linear-gradient(to right, #00C5A3, #009C91);
+            padding: 15px 30px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .menu {
+            list-style-type: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .menu li {
+            position: relative;
+            padding: 10px;
+        }
+
+        .menu li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .menu li a:hover {
+            background-color: #00C5A3;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #FDB813;
+            min-width: 200px;
+            border-radius: 5px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .submenu li a {
+            padding: 10px;
+            color: #333;
+            transition: background-color 0.3s;
+        }
+
+        .submenu li a:hover {
+            background-color: #FF6F00;
+        }
+
+        .menu li:hover .submenu {
+            display: block;
+        }
+
+        main {
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #009C91;
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            color: #00C5A3;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            max-width: 100%;
+            height: 400px;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slider img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 156, 145, 0.8);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: #00786e;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <h1>Galerie</h1>
+
+    <!-- Secțiunea Stațiune -->
+    <section id="statiune2" class="info-box">
+        <h2>Stațiune</h2>
+        <div class="slider-container">
+            <button class="prev" onclick="changeSlide('statiune', -1)">&#10094;</button>
+            <div class="slider" id="statiune-slider">
+                <img src="imagini/statiune1.jpg" alt="Statiune 1">
+                <img src="imagini/statiune2.jpg" alt="Statiune 2">
+                <img src="imagini/statiune3.jpeg" alt="Statiune 3">
+                <img src="imagini/statiune4.jpg" alt="Statiune 4">
+                <img src="imagini/statiune5.jpg" alt="Statiune 5">
+                <!-- continuă până la statiune10.jpg -->
+            </div>
+            <button class="next" onclick="changeSlide('statiune', 1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Secțiunea Orașul Amara -->
+    <section id="oamara" class="info-box">
+        <h2>Orașul Amara</h2>
+        <div class="slider-container">
+            <button class="prev" onclick="changeSlide('amara', -1)">&#10094;</button>
+            <div class="slider" id="amara-slider">
+                <img src="imagini/amara5.jpg" alt="Amara 1">
+                <img src="imagini/amara2.jpg" alt="Amara 2">
+                <img src="imagini/amara3.jpg" alt="Amara 3">
+                <img src="imagini/amara1.png" alt="Amara 4">
+                <img src="imagini/amara4.png" alt="Amara 5">
+                <!-- până la amara10.jpg -->
+            </div>
+            <button class="next" onclick="changeSlide('amara', 1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Secțiunea Trofeul Tinereții -->
+    <section id="trofeul" class="info-box">
+        <h2>Trofeul Tinereții</h2>
+        <div class="slider-container">
+            <button class="prev" onclick="changeSlide('trofeu', -1)">&#10094;</button>
+            <div class="slider" id="trofeu-slider">
+                <img src="imagini/trofeu5.jpg" alt="Trofeu 1">
+                <img src="imagini/trofeu2.jpg" alt="Trofeu 2">
+                <img src="imagini/trofeu3.jpg" alt="Trofeu 3">
+                <img src="imagini/trofeu4.jpg" alt="Trofeu 4">
+                <img src="imagini/trofeu1.jpg" alt="Trofeu 5">
+                <!-- până la trofeu10.jpg -->
+            </div>
+            <button class="next" onclick="changeSlide('trofeu', 1)">&#10095;</button>
+        </div>
+    </section>
+</main>
+
+<script>
+    const sliders = {
+        statiune: { index: 0, id: "statiune-slider" },
+        amara: { index: 0, id: "amara-slider" },
+        trofeu: { index: 0, id: "trofeu-slider" }
+    };
+
+    function changeSlide(name, direction) {
+        const slider = sliders[name];
+        const container = document.getElementById(slider.id);
+        const total = container.children.length;
+
+        slider.index += direction;
+        if (slider.index < 0) slider.index = total - 1;
+        if (slider.index >= total) slider.index = 0;
+
+        container.style.transform = `translateX(-${slider.index * 100}%)`;
+    }
+</script>
+
+</body>
+</html>
